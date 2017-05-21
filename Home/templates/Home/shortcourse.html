@@ -1,0 +1,64 @@
+{% extends "Home/base.html" %}
+{% block content %}
+<!--header end here-->
+<!--single page start here-->
+<div class="events">
+	<div class="container">
+		<div class="events-main">
+			<div class="events-top">
+				<form id="search" role="form" action="" method="GET">
+  					<input type="text" name = "q" placeholder="Search by Date or Title"  value="{{ request.GET.q }}"/>
+  					<input type="submit" value="Search" />
+				</form>
+				<h3>Short Courses</h3>
+			</div>
+
+			{% for item in data %}
+			<div class="events-grid">
+				<div class="col-md-3 event-month wthree">
+					<h3><p>{{ item.time }}</p></h3>
+					<h4><p>{{ item.SDate }}</p></h4>
+				</div>
+				<div class="col-md-5 event-text">
+					<h4>{{ item.title }}</h4>
+					<p>{{ item.description }}</p>
+					<p>{{ item.duration }}</p>
+					<p>{{ item.venue }}</p>
+					<p>{{ item.instructor }}</p>
+					<a href="#comment">Feedback</a>
+					<a href="#">Report Post</a>
+					<p> </p>
+				</div>
+			   <div class="clearfix"> </div>
+			</div>
+			{% endfor %}
+
+			<div class="single-bottom">
+			<div id = "comment"></div>
+			<h2>Leave a Comment</h2>
+				<form name="form" role="form" action="" method="POST" >{% csrf_token %}
+						<div class="col-md-4 comment">
+						   <input type="text" name="name" placeholder="Name" required/>
+						</div>
+						<div class="col-md-4 comment">
+						   <input type="text" name="email" placeholder="Email"  required>
+						</div>
+						<div class="col-md-4 comment">
+						   <input type="text" name="postTitle" placeholder="Post Title"  required>
+						</div>
+						<div class="clearfix"> </div>
+						   <textarea name="message" placeholder="Message"  required></textarea>
+							<input type="submit" value="Send" >						
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!--single page end here-->
+<!--banner end here-->
+<!--footer start here-->
+
+<!--footer end here-->			
+{% endblock %}

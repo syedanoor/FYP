@@ -1,0 +1,70 @@
+{% extends "Home/base.html" %}
+{% block content %}
+
+<div class="no">
+    <div class="container">
+        <div class="row text-center ">
+            <div class="col-md-12">
+                <br /><br />
+                <h2 style="color:white;">Are You Conducting Survey?? </h2>
+               
+                
+                 <br />
+            </div>
+        </div>
+         <div class="row ">
+               
+                  <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                        <b>   Enter Details of Survey </b> 
+                                  <span class="pull-right">
+                                    <a href="{% url 'index' %}" >Exit </a>
+                                   </span>						
+                            </div>
+                            <div class="panel-body" style="background-color:#150A03">
+                                <form name="form" role="form" action="" method="post" >{% csrf_token %}
+                                       <br />
+                                    {% if messages %}
+                                        {% for msg in messages %}
+                                            <div  role="alert">
+                                                {{msg.message}}
+                                            </div>
+                                        {% endfor %}
+                                    {% endif %}
+                                     <div class="form-group input-group">
+                                            <span class="input-group-addon"><i   ></i></span>
+                                            <input name="title" type="text" class="form-control" placeholder="Survey Title" required />
+                                        </div>
+                                      <div class="form-group input-group">
+                                            <span class="input-group-addon"><i  ></i></span>
+                                            <input name="description" type="text" class="form-control"  placeholder="Description" required />
+                                        </div>
+                                     <div class="form-group input-group">
+                                            <span class="input-group-addon"><i   ></i></span>
+                                            <input name = "link" type="url" class="form-control"  placeholder="Google Link" required />
+                                        </div>
+                                     
+                                    
+                                     <span class="pull-right">
+                                     <input type="submit" class="btn btn-primary "></input>
+                                     </span>
+                                    
+                                    </form>
+                            </div>
+                           
+                        </div>
+                       <br>
+                      <br>
+                      <br>
+                      <br>
+                       <br>
+                      <br>
+                    </div>
+                
+                
+        </div>
+    </div>
+
+{% endblock %}
+    </div>

@@ -1,0 +1,91 @@
+
+{% extends "Home/base.html" %}
+{% block content %}
+<!--educate logos start here-->
+<div class="educate">
+	<div class="container">
+		<div class="education-main">
+			<ul class="ch-grid">
+				 <div class="col-md-3 w3agile">
+					<li>
+						<div class="ch-item">
+							<a href="{% url 'workshops' %}" class="active">
+							<div class="ch-info">
+								<div class="ch-info-front ch-img-1">
+									<img src="/static/Home/images/wk.png" alt="">
+					                <h5>Workshops</h5>
+								</div>
+								<div class="ch-info-back">
+									<h3>Workshops</h3>
+									<p>Get an opportunity & improve your skills</p>
+								</div>
+							</div>
+							</a>
+						</div>
+					</li>
+					</div>
+					 <div class="col-md-3 w3agile">
+						 <li>
+						<div class="ch-item">
+							<a href="{% url 'shortcourse' %}" class="active">
+							<div class="ch-info">
+								<div class="ch-info-front ch-img-2">
+									<img src="/static/Home/images/sc.png" alt="">
+					                <h5>Short Courses</h5>
+								</div>
+								<div class="ch-info-back">
+									<h3>Short Courses</h3>
+									<p>Get an opportunity & improve your skills</p>
+								</div>
+							</div>
+							</a>
+						</div>
+						 </li>
+					</div>
+					 <div class="col-md-3 w3agile">
+					<li>
+						<div class="ch-item">
+							<a href="{% url 'survey' %}" class="active">
+							<div class="ch-info">
+								<div class="ch-info-front ch-img-3">
+									<img src="/static/Home/images/survey.png" alt="">
+					                <h5>Surveys</h5>
+								</div>
+								<div class="ch-info-back">
+									<h3>Surveys</h3>
+									<p>Its time to rate your experiences</p>
+								</div>
+							</div>
+							</a>
+						</div>
+					</li>
+					</div>
+					 <div class="col-md-3 w3agile">
+					<li>
+						<div class="ch-item">
+							<a href="{% url 'news' %}" class="active">
+							<div class="ch-info">
+								<div class="ch-info-front ch-img-4">
+									<img src="/static/Home/images/news.png" alt="">
+					                <h5>News</h5>
+								</div>
+								<div class="ch-info-back">
+									<h3>News</h3>
+									<p>Get Latest Updates</p>
+								</div>
+							</div>
+							</a>
+						</div>
+					</li>
+					</div>
+					<div class="clearfix"> </div>
+			 </ul>
+		 </div>
+	</div>
+</div>
+<!--educate logos end here-->
+<!--banner end here-->
+<!--footer start here-->
+
+<!--footer end here-->
+{% endblock %}

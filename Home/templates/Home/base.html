@@ -1,0 +1,123 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>ITEventsFinder</title>
+<link href="/static/Home/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+	<link href="/static/Home/css/cbdb-search-form.css" type="text/css" rel="stylesheet" media="all" />
+<link href="/static/Home/css/jquery-ui.css" rel="stylesheet" type="text/css" media="all">
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<!-- Custom Theme files -->
+<link href="/static/Home/css/style.css" rel="stylesheet" type="text/css" media="all"/>
+<!-- Custom Theme files -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Learning  Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!--Google Fonts-->
+<link href='//fonts.googleapis.com/css?family=Marvel:400,700' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Roboto:400,300,500,700,900' rel='stylesheet' type='text/css'>
+<!--google fonts-->
+<script src="/static/Home/js/jquery-1.11.0.min.js"></script>
+	<script src="/static/Home/js/validation.js"></script>
+<script src="/static/Home/js/jquery-1.9.1.js"></script>
+<script src="/static/Home/js/jquery-ui.js"></script>
+</head>
+<body>
+<!--header strat here-->
+<div class="banner1 agileits">
+	<div class="header">
+		<div class="container">
+			<div class="header-main">
+				<div class="logo">
+			        <h1><span class="books"></span> <a href="index">ITEventsFinder</a></h1>
+			    </div>
+				 <div class="top-nav">
+					 <span class="menu"><img src="/static/Home/images/icon.png" alt=""></span>
+				     <nav class="cl-effect-21" id="cl-effect-21">
+							<ul class="res">
+								<li><a href="{% url 'index' %}">Home</a></li>
+								<li><a href="{% url 'searchEvent' %}">Search Event</a></li>
+								<li><a href="postEvent">Post Event</a></li>
+								<li><a href="{% url 'news' %}">Event News</a></li>
+
+								{% ifnotequal username "not logged in" %}
+                                <li><a href="{% url 'logout' %}">Logout</a></li>
+
+								{% else %}
+                                <li><a href="{% url 'login' %}">Login</a></li>
+
+								{% endifnotequal %}
+
+							</ul>
+						</nav>
+						<!-- script-for-menu -->
+										 <script>
+										   $( "span.menu" ).click(function() {
+											 $( "ul.res" ).slideToggle( 300, function() {
+											 // Animation complete.
+											  });
+											 });
+										</script>
+						<!-- /script-for-menu -->
+
+				 </div>
+				<div class="clearfix"> </div>
+			</div>
+	    </div>
+   </div>
+</div>
+
+<!--header end here-->
+
+
+{% block content %}
+{% endblock %}
+
+<!--footer start here-->
+<div class="footer w3ls">
+	<div class="container">
+		<div class="footer-main">
+			<div class="footer-top">
+				<div class="col-md-4 ftr-grid">
+					<h3>ITEventsFinder</h3>
+					<p>Here we gathers information of events from multiple institutes for the ease of users to have all colors at same place.
+						We hope you will find it useful.
+					</p>
+					</p>
+				</div>
+				<div class="col-md-4 ftr-grid">
+					<h3>Our Address</h3>
+					<div class="ftr-address">
+						<div class="local">
+							<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
+						</div>
+						<div class="ftr-text">
+							<p>Punjab University College of Information Technology Lahore.</p>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+					<div class="ftr-address">
+						<div class="local">
+							<span class="glyphicon glyphicon-phone" aria-hidden="true"></span>
+						</div>
+						<div class="ftr-text">
+							<p>+1 (512) 154 8176</p>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+				</div>
+				<div class="col-md-4 ftr-grid">
+					<h3> Stay In Touch  <img src="/static/Home/images/msg.png" alt=""  ></h3>
+					<p>You can contact us via Email for<br> any kind of Query.<br>Drop us an Email at</p>
+					<p style="color: #2a6496"  >iteventsfinder@gmail.com </p>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!--footer end here-->
+
+</body>
+</html>

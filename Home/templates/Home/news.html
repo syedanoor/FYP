@@ -1,0 +1,39 @@
+{% extends "Home/base.html" %}
+{% block content %}
+
+<!--header end here-->
+<!--single page start here-->
+<div class="events">
+	<div class="container">
+		<div class="events-main">
+			<div class="events-top">
+				<form id="search" role="form" action="" method="GET">
+  					<input type="text" name = "q" placeholder="Search News"  value="{{ request.GET.q }}"/>
+  					<input type="submit" value="Search" />
+				</form>
+				<h3>IT Events News</h3>
+			</div>
+			{% for news in data %}
+			<div class="events-grid"> 
+				<div class="col-md-5 event-text">
+					<h4>{{ news.title }}</h4>
+					<p>{{ news.description }}</p>
+					<a href="{{ news.link }}">Read More</a>
+					<p> </p>
+				</div> 
+			   <div class="clearfix"> </div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+</div>
+
+
+<!--single page end here-->
+<!--banner end here-->
+<!--footer start here-->
+
+<!--footer end here-->			
+
+
+{% endblock %}

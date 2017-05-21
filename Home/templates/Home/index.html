@@ -1,0 +1,396 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>ITEventsFinder</title>
+<link href="/static/Home/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<!-- Custom Theme files -->
+<link href="/static/Home/css/style.css" rel="stylesheet" type="text/css" media="all"/>
+<link href="/static/Home/css/style1.css" rel="stylesheet" type="text/css" media="all" />
+<!-- Custom Theme files -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Agility  Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!--Google Fonts-->
+<link href='https://fonts.googleapis.com/css?family=Marvel:400,700' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700,900' rel='stylesheet' type='text/css'>
+<!--google fonts-->
+<script src="/static/Home/js/jquery-1.11.0.min.js"></script>
+<link rel="stylesheet" href="/static/Home/css/flexslider.css" type="text/css" media="screen" />
+
+</head>
+<body>
+<!--header strat here-->
+<div class="banner agileits">
+	<div class="header">
+		<div class="container">
+			<div class="header-main">
+				<div class="logo">
+			       <h1><span class="books"></span> <a href="#">ITEventsFinder</a></h1>
+			    </div>
+				 <div class="top-nav">
+				 	 <span class="menu"> <a href="#"></a><img src="images/icon.png" alt=""></span>
+				     <nav class="cl-effect-21" id="cl-effect-21">
+							<ul class="res">
+								<li><a href="#" class="active">Home</a></li>
+								<li><a href="{% url 'searchEvent' %}">Search Event</a></li>
+								<li><a href="{% url 'postEvent' %}">Post Event</a></li>
+								<li><a href="{% url 'news' %}">Event News</a></li>
+
+
+
+								{% ifnotequal username "not logged in" %}
+                                <li><a href="{% url 'logout' %}">Logout</a></li>
+
+								{% else %}
+                                <li><a href="{% url 'login' %}">Login</a></li>
+
+
+								{% endifnotequal %}
+							</ul>
+						</nav>
+						<!-- script-for-menu -->
+										 <script>
+										   $( "span.menu" ).click(function() {
+											 $( "ul.res" ).slideToggle( 300, function() {
+											 // Animation complete.
+											  });
+											 });
+										</script>
+						<!-- /script-for-menu -->
+
+				 </div>
+				<div class="clearfix"> </div>
+			</div>
+			<div class="banner-main">
+				 <section class="slider">
+					 <div class="flexslider">
+						<ul class="slides">
+						  <li>
+						  	<div class="banner-main">
+								   <h3>What we do? </h3>
+						            <p>Here we are trying to facilitate users to have a single
+                                 platform where they can search Information Technology related events and  news about the current events.
+								 No more need of annoying facebook notifications! </p>
+								<div class="clearfix"> </div>
+							</div>
+						  </li>
+						  <li>
+						  	<div class="banner-main">
+								   <h3>All in one</h3>
+						           <p>Here we gathers information of events from multiple institutes for the ease of users to have all colors at same place.
+                                you can seee only what you want categorized searching (i-e search by cities, tittle and institute) is also provided here.</p>
+								<div class="clearfix"> </div>
+							</div>
+						  </li>
+						  <li>
+						  	<div class="banner-main">
+								   <h3>Waiting for your response</h3>
+						           <p>Your feedback will be highly appriciated! You can add comments and share you experiense For any kind of query you can contact us we will get back to you soon.</p>
+								<div class="clearfix"> </div>
+							</div>
+						  </li>
+
+					    </ul>
+					 </div>
+					 <div class="clearfix"> </div>
+            </section>
+		 </div>
+	 </div>
+   </div>
+   <div id="Search"></div>
+</div>
+
+<!--header end here-->
+<!-- FlexSlider -->
+				  <script defer src="/static/Home/js/jquery.flexslider.js"></script>
+				  <script type="text/javascript">
+					$(function(){
+					});
+					$(window).load(function(){
+					  $('.flexslider').flexslider({
+						animation: "slide",
+						start: function(slider){
+						  $('body').removeClass('loading');
+						}
+					  });
+					});
+				  </script>
+<!-- FlexSlider -->
+<!--banner end here-->
+<!--educate logos start here-->
+<div class="educate">
+	<div class="container">
+		<div class="education-main">
+			<ul class="ch-grid">
+				 <div class="col-md-3 w3agile">
+					<li>
+						<div class="ch-item">
+							<a href="{% url 'workshops' %}" class="active">
+							<div class="ch-info">
+								<div class="ch-info-front ch-img-1">
+									<img src="/static/Home/images/wk.png" alt="">
+					                <h5>Workshops</h5>
+								</div>
+								<div class="ch-info-back">
+									<h3>Workshops</h3>
+									<p>Get an opportunity & improve your skills</p>
+								</div>
+							</div>
+							</a>
+						</div>
+					</li>
+					</div>
+					 <div class="col-md-3 w3agile">
+						 <li>
+						<div class="ch-item">
+							<a href="{% url 'shortcourse' %}" class="active">
+							<div class="ch-info">
+								<div class="ch-info-front ch-img-2">
+									<img src="/static/Home/images/sc.png" alt="">
+					                <h5>Short Courses</h5>
+								</div>
+								<div class="ch-info-back">
+									<h3>Short Courses</h3>
+									<p>Get an opportunity & improve your skills</p>
+								</div>
+							</div>
+							</a>
+						</div>
+						 </li>
+					</div>
+					 <div class="col-md-3 w3agile">
+					<li>
+						<div class="ch-item">
+							<a href="{% url 'survey' %}" class="active">
+							<div class="ch-info">
+								<div class="ch-info-front ch-img-3">
+									<img src="/static/Home/images/survey.png" alt="">
+					                <h5>Surveys</h5>
+								</div>
+								<div class="ch-info-back">
+									<h3>Surveys</h3>
+									<p>Its time to rate your experiences</p>
+								</div>
+							</div>
+							</a>
+						</div>
+					</li>
+					</div>
+					 <div class="col-md-3 w3agile">
+					<li>
+						<div class="ch-item">
+							<a href="{% url 'news' %}" class="active">
+							<div class="ch-info">
+								<div class="ch-info-front ch-img-4">
+									<img src="/static/Home/images/news.png" alt="">
+					                <h5>News</h5>
+								</div>
+								<div class="ch-info-back">
+									<h3>News</h3>
+									<p>Get Latest Updates</p>
+								</div>
+							</div>
+							</a>
+						</div>
+					</li>
+					</div>
+					<div class="clearfix"> </div>
+			 </ul>
+		 </div>
+	</div>
+</div>
+<!--educate logos end here-->
+<!--we do start here-->
+<div class="we-do">
+	<div class="container">
+		<div class="we-do-main">
+			   <h2>What We Do </h2>
+			   <h4>Facilitate our viewers</h4>
+			   <p> Here we gathers information of events from multiple institutes for the ease of users to have all colors at same place.
+				   you can seee only what you want categorized searching (i-e search by cities, tittle and institute) is also provided here.</p>
+			    <a href="#">Read More</a>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+</div>
+<!--we do end here-->
+<!--pop-up-box-->
+	  <script type="text/javascript" src="/static/Home/js/modernizr.custom.53451.js"></script>
+	<link href="/static/Home/css/popuo-box.css" rel="stylesheet" type="text/css" media="all"/>
+	<script src="/static/Home/js/jquery.magnific-popup.js" type="text/javascript"></script>
+<!--pop-up-box-->
+
+<!--watch start here-->
+<div class="watch-video">
+	<div class="container">
+		<div class="watch-video-main">
+			<div class="video-bottom">
+			 <a class="play-icon popup-with-zoom-anim" href="#small-dialog5"> <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"> </span> </a>
+			 <!--video-->
+				<div id="small-dialog5" class="mfp-hide">
+						<video width="640" height="361" controls>
+							<source src="/static/Home/images/ITEventsFinder.mp4" type="video/mp4">
+					    </video>
+				</div>
+				 <script>
+						$(document).ready(function() {
+						$('.popup-with-zoom-anim').magnificPopup({
+							type: 'inline',
+							fixedContentPos: false,
+							fixedBgPos: true,
+							overflowY: 'auto',
+							closeBtnInside: true,
+							preloader: false,
+							midClick: true,
+							removalDelay: 300,
+							mainClass: 'my-mfp-zoom-in'
+						});
+
+						});
+				</script>
+		</div>
+
+
+			<h3>Watch Our Video</h3>
+		</div>
+	</div>
+</div>
+<!--watch end here-->
+<!--event start here-->
+<div class="events">
+	<div class="container">
+		<div class="events-main">
+			<div class="events-top">
+				<h3>Recent Events</h3>
+			</div>
+			<div class="events-grid">
+				<div class="col-md-3 event-month wthree">
+					<h3>16</h3>
+					<h4>Nov, 2016</h4>
+				</div>
+				<div class="col-md-5 event-text">
+					<h4>Android Development Workshop</h4>
+					<p>Passionate about Android Programming? Or thinking of taking the first dive into it? The 2-Days Android Development Workshop's registrations are now OPENED! So Hurry up and get your seat reserved already! #AndroidWorkshop #RegistrationsOpened #TeamXgeeksters
+					For Registrations:
+					https://goo.gl/forms/R4nPPOupZ1IMv2Q12
+					Event Page:
+					https://www.facebook.com/events/341547659549919/#</p>
+					<a href="#Search">Read More</a>
+					<p> </p>
+				</div>
+				<div class="col-md-4 event-img">
+					<div class="item item-type-move">
+						<div class="item-img">
+								<img src="/static/Home/images/e1.jpg" class="img-responsive" alt="">
+						</div>
+                </div>
+
+				</div>
+			   <div class="clearfix"> </div>
+			</div>
+			<div class="events-grid">
+				<div class="col-md-3 event-month wthree">
+					<h3>24</h3>
+					<h4>DEC,2016</h4>
+				</div>
+				<div class="col-md-5 event-text">
+					<h4>SEO Workshop</h4>
+					<p>Xgeeksters presents one of its kind SEO workshop designed to eradicate the amalgamations in figuring out the “secrets” of getting to the top of the search engines like Google. Struggle no more! As a workshop participant, you’ll learn the power of SEO in our hands-on approach to search engine optimization training. All that under a nominal fee of PKR: 450/- per seating. </p>
+					<a href="#Search">Read More</a>
+					<p> </p>
+				</div>
+				<div class="col-md-4 event-img">
+					<div class="item item-type-move">
+						<div class="item-img">
+								<img src="/static/Home/images/e2.jpg" class="img-responsive" alt="">
+						</div>
+                </div>
+				</div>
+			   <div class="clearfix"> </div>
+			</div>
+			<div class="events-grid">
+				<div class="col-md-3 event-month wthree">
+					<h3>28</h3>
+					<h4>Oct, 2016</h4>
+				</div>
+				<div class="col-md-5 event-text">
+					<h4>Freelancing & Technical Guidance</h4>
+					<p>This time there are more exciting opportunities for you, so DONT MISS it and get yourself registered.Stay tuned to "TECJAUNT".
+					Registration Link: https://docs.google.com/forms/d/e/1FAIpQLSeOLgWRmPApZw2J6uQoRz0KC-h3Xauy8qkCK0TLczihclldNA/viewform</p>
+					<a href="#Search">Read More</a>
+					<p> </p>
+				</div>
+				<div class="col-md-4 event-img">
+					<div class="item item-type-move">
+						<div class="item-img">
+								<img src="/static/Home/images/e3.jpg" class="img-responsive" alt="">
+						</div>
+                </div>
+				</div>
+			   <div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+</div>
+<!--event end here-->
+<script src="/static/Home/js/responsiveslides.min.js"></script>
+<script>
+    // You can also use "$(window).load(function() {"
+    $(function () {
+      $("#slider2").responsiveSlides({
+        auto: true,
+        pager: true,
+        speed: 300,
+        namespace: "callbacks",
+      });
+    });
+  </script>
+<!--footer start here-->
+<div class="footer w3ls">
+	<div class="container">
+		<div class="footer-main">
+			<div class="footer-top">
+				<div class="col-md-4 ftr-grid">
+					<h3>ITEventsFinder</h3>
+					<p>Here we gathers information of events from multiple institutes for the ease of users to have all colors at same place.
+						We hope you will find it useful.
+					</p>
+					</p>
+				</div>
+				<div class="col-md-4 ftr-grid">
+					<h3>Our Address</h3>
+					<div class="ftr-address">
+						<div class="local">
+							<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
+						</div>
+						<div class="ftr-text">
+							<p>Punjab University College of Information Technology Lahore.</p>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+					<div class="ftr-address">
+						<div class="local">
+							<span class="glyphicon glyphicon-phone" aria-hidden="true"></span>
+						</div>
+						<div class="ftr-text">
+							<p>+1 (512) 154 8176</p>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+				</div>
+				<div class="col-md-4 ftr-grid">
+					<h3> Stay In Touch  <img src="/static/Home/images/msg.png" alt=""  ></h3>
+					<p>You can contact us via Email for<br> any kind of Query.<br>Drop us an Email at</p>
+					<p style="color: #2a6496"  >iteventsfinder@gmail.com </p>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!--footer end here-->
+</body>
+</html>

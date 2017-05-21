@@ -1,0 +1,38 @@
+{% extends "Home/base.html" %}
+{% block content %}
+<div style="margin-top: 65px">
+<!--event star here-->
+<div class="clients">
+<div id="Post"></div>
+	<div class="container">
+		<div class="clients-main">
+			<div class="clients-top">
+				<h3>Post Event</h3>
+			</div>
+		 <div class="slider-bann wow bounceInRight" data-wow-delay="0.3s">
+	    <ul class="rslides" id="slider2">
+	      <li>
+	      	<div class="clients-text">
+		     	<p>
+				If you are event organizer and wants to share your event details, select event type and fill the form to provide required information and post your event information.
+				</p>
+				<div class="we-do-main">
+					<a href="{% url 'postworkshop' %}">Workshop</a>
+					<a href="{% url 'postshortcourse' %}">Short Course</a>
+					<a href="{% url 'postsurvey' %}">Survey</a>
+		        </div>
+
+	        </div>
+	      </li>
+	    </ul>
+	    </div>
+    </div>
+
+	</div>
+
+</div>
+	</div>
+<!--event end here-->
+
+<!--footer start here-->
+{% endblock %}

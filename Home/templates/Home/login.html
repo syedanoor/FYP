@@ -1,0 +1,70 @@
+﻿{% extends "Home/base.html" %}
+{% block content %}
+
+
+<div class="no">
+<div class="container">
+        <div class="row text-center ">
+            <div class="col-md-12">
+                <br /><br />
+                <h1 style="color: whitesmoke"> Login</h1>
+                 <br />
+            </div>
+        </div>
+         <div class="row ">
+               
+                  <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
+
+                        <div class="panel panel-default">
+
+                            <div class="panel-heading">
+                        <strong>   Enter Details To Login </strong>  
+                            </div>
+                            <div class="panel-body" style="background-color:#150A03">
+                                <form name="form" role="form" action="" method="post" >{% csrf_token %}
+                                       <br />
+                                     <div class="form-group input-group">
+                                            <span class="input-group-addon"><i class="fa fa-tag"  ></i></span>
+                                            <input type="text" name="username" class="form-control" placeholder="Your Username " required />
+                                     </div>
+                                    <div class="form-group input-group">
+                                            <span class="input-group-addon"><i class="fa fa-lock"  ></i></span>
+                                            <input type="password" name="password" class="form-control"  placeholder="Your Password" required/>
+                                    </div>
+                                    {% if messages %}
+                                        {% for msg in messages %}
+                                            <div  role="alert">
+                                                {{msg.message}}
+                                            </div>
+                                        {% endfor %}
+                                    {% endif %}
+                                    <div class="form-group">
+                                            <span class="pull-right">
+                                                   <a href="{% url 'forgetPassword' %}" >Forget password ? </a>
+                                            </span>
+                                    </div>
+                                     <input type="submit" class="btn btn-primary" value="Login Now">
+                                    <hr />
+                                    <p style="color: whitesmoke"> Not register?? </p>
+                                     <span class="pull-right">
+                                         <a href="{% url 'registeration' %}" >Register here </a>
+                                     </span>
+                                </form>
+                            </div>
+
+
+                      </div>
+                       <br>
+                      <br>
+                      <br>
+                      <br>
+                       <br>
+                      <br>
+                    </div>
+        </div>
+    </div>
+
+
+</div>
+
+{% endblock %}
